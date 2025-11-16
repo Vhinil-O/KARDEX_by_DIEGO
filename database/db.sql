@@ -16,7 +16,7 @@ INSERT INTO usuarios (nombres,cargo,email,password,fyh_creacion,estado) VALUES (
 
 
 CREATE TABLE IF NOT EXISTS roles (
-    id_usuario INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    id_rol INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
     nombre_rol VARCHAR(255) NOT NULL UNIQUE KEY,
 
     fyh_creacion DATETIME,

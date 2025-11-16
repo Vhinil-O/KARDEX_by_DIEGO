@@ -34,6 +34,11 @@ foreach ($sesionDatos as $sesionDato) {
 
 <!--ICONOS DE BOOTSTRAP-->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+
+<!-- TABLE -->
+<link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
+<link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
+<link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -156,3 +161,4 @@ foreach ($sesionDatos as $sesionDato) {
     </div>
     <!-- /.sidebar -->
   </aside>
+  

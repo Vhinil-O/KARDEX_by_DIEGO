@@ -30,7 +30,7 @@
               </div>
               <!-- /.card-header -->
               <div class="card-body">
-                <table class="table table-striped table-hover">
+                <table id="example2" class="table table-striped table-hover">
             <thead>
               <tr>
                 <th>Nro</th>
@@ -50,12 +50,16 @@
                     <td><?= $role['nombre_rol'] ?></td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-eye-fill"></i>
-                        </button>
-                        <button type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
-                        </button>
-                        <button type="button" class="btn btn-secondary btn-sm btn-danger"><i class="bi bi-trash3-fill"></i>
-                        </button>
+                        <a href="show.php?id=<?= $idRol ?>" type="button" class="btn btn-secondary btn-sm"><i class="bi bi-eye-fill"></i>
+                        </a>
+                        <a href="edit.php?id=<?= $idRol ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
+                        </a>
+                        <form id="deleteForm<?= $idRol ?>" action="<?= APP_URL;?>/app/controllers/roles/deleteRoles.php" method="post">
+                          <input type="text" name="idRol" value="<?= $idRol ?>" hidden>
+                          <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $idRol ?>">
+                            <i class="bi bi-trash3-fill"></i>
+                          </button>
+                        </form>
                       </div>
                     </td>
                   </tr>
@@ -81,3 +85,44 @@
     include '../../admin/layout/parte2.php';
     include '../../layout/mensajes.php';
   ?>
+
+  <script>
+  $(function () {
+    $("#example1").DataTable({
+      "pageLength": 5,
+      "responsive": true, "lengthChange": false, "autoWidth": false,
+      "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
+    }).buttons().container().appendTo('#example1_wrapper .col-md-6:eq(0)');
+    $('#example2').DataTable({
+      "pageLength": 5,
+      "paging": true,
+      "lengthChange": false,
+      "searching": false,
+      "ordering": true,
+      "info": true,
+      "autoWidth": false,
+      "responsive": true,
+    });
+
+    // SweetAlert para eliminar roles
+    $('.delete-btn').click(function() {
+      const roleId = $(this).data('id');
+      
+      Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡No podrás revertir esta acción!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, ¡eliminar!',
+        cancelButtonText: 'Cancelar'
+      }).then((result) => {
+        if (result.isConfirmed) {
+          // Envía el formulario correspondiente
+          $('#deleteForm' + roleId).submit();
+        }
+      });
+    });
+  });
+</script>
