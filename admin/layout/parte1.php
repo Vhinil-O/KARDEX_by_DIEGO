@@ -144,6 +144,25 @@ foreach ($sesionDatos as $sesionDato) {
             </ul>
           </li>
 
+          <li class="nav-item ">
+            <a href="#" class="nav-link active">
+              <i class="nav-icon fas"><i class="bi bi-person-fill"></i>
+              </i>
+              <p>
+                Usuarios
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/usuarios " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Listado de usuarios</p>
+                </a>
+              </li>
+            </ul>
+          </li>
+
 
           
           <li class="nav-item">
