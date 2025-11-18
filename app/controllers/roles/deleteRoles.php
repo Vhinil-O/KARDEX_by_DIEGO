@@ -9,7 +9,8 @@ $sentencia = $pdo->prepare("DELETE FROM roles where id_rol=:id_rol");
 
 $sentencia->bindParam('id_rol',$idRol);
 
-    if ($sentencia->execute()) {
+try {
+if ($sentencia->execute()) {
     //echo "Todo bien";
     session_start();
     $_SESSION['mensaje'] = "Rol ELIMINADO con exito";
@@ -22,6 +23,14 @@ $sentencia->bindParam('id_rol',$idRol);
     $_SESSION['icono'] = "error";
     header(header: 'Location:'.APP_URL."/admin/roles");
 }
+} catch (Exception $exception) {
+    session_start();
+    $_SESSION['mensaje'] = "Rol NO ELIMINADO, Verifique no no exista en otras tablas";
+    $_SESSION['icono'] = "error";
+    header(header: 'Location:'.APP_URL."/admin/roles");
+}
+
+    
 
 
 
