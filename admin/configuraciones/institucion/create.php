@@ -77,7 +77,7 @@
                     <div class="col-md-12">
                         <div class="form-group">
                             <button type="submit" class="btn btn-primary">Registrar</button>
-                            <a href="<?=APP_URL;?>/admin/usuarios" class="btn btn-danger">Cancelar</a>
+                            <a href="<?=APP_URL;?>/admin/configuraciones" class="btn btn-danger">Cancelar</a>
                         </div>
                     </div>
                 </div>

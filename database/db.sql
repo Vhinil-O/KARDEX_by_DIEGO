@@ -59,3 +59,15 @@ INSERT INTO usuarios (nombres,rol_id,email,password,fyh_creacion,estado) VALUES 
     )ENGINE=InnoDB;
 
     INSERT INTO configuracion_instituciones (nombre_institucion,logo,direccion,telefono,celular,email,fyh_creacion,estado) VALUES ('Universidad de Guanajuato', 'logo.png', 'Carretera Salamanca - Valle de Santiago km 3.5 + 1.8 Comunidad de, Palo Blanco, 36787 Salamanca, Gto.','4646479940','4646479940','cis.tramites@ugto.mx','2025-11-17 21:11:11','1');
+
+CREATE TABLE IF NOT EXISTS gestiones (
+        id_gestion INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+        gestion VARCHAR(255) NOT NULL,
+
+        fyh_creacion DATETIME NULL,
+        fyh_actualizacion DATETIME NULL,
+        estado VARCHAR(11)
+
+    )ENGINE=InnoDB;
+
+    INSERT INTO gestiones (gestion,fyh_creacion,estado) VALUES ('2025/2026','2025-11-17 21:11:11','1');
