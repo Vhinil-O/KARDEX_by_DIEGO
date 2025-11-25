@@ -3,6 +3,7 @@
   include '../admin/layout/parte1.php';
   include '../app/controllers/roles/listadoRoles.php';
   include '../app/controllers/usuarios/listadoUsuarios.php';
+  include '../app/controllers/niveles/listadoNiveles.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -52,6 +53,27 @@
               </div>
               <div class="icon">
                 <i class="fas"><i class="bi bi-person-fill"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/usuarios" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-success">
+              <div class="inner">
+                <?php
+                  $contadorNiveles = 0;
+                  foreach ($niveles as $nivele) {
+                    $contadorNiveles++;
+                  }
+                ?>
+                <h3><?=$contadorNiveles;?></h3>
+                <p>Niveles registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-mortarboard"></i></i>
               </div>
               <a href="<?=APP_URL?>/admin/usuarios" class="small-box-footer">
                 Mas informacion <i class="fas fa-arrow-circle-right"></i>
