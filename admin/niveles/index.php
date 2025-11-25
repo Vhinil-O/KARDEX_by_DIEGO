@@ -49,7 +49,7 @@
                   ?>
                   <tr>
                     <td><?= $contadorNiveles; ?></td>
-                    <td><?= $nivele['gestion_id']; ?></td>
+                    <td><?= $nivele['gestion']; ?></td>
                     <td><?= $nivele['nivel']; ?></td>
                     <td><?= $nivele['turno']; ?></td>
                     <td>
@@ -63,16 +63,16 @@
                     </td>
                     <td>
                       <div class="btn-group" role="group" aria-label="Basic example">
-                        <a href="show.php?id=<?= $id_gestion ?>" type="button" class="btn btn-secondary btn-sm"><i class="bi bi-eye-fill"></i>
+                        <a href="show.php?id=<?= $id_nivel ?>" type="button" class="btn btn-secondary btn-sm"><i class="bi bi-eye-fill"></i>
                         </a>
-                        <a href="edit.php?id=<?= $id_gestion ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
+                        <a href="edit.php?id=<?= $id_nivel ?>" type="button" class="btn btn-secondary btn-sm btn-success"><i class="bi bi-pencil-fill"></i>
                         </a>
-                      <!--  <form id="deleteForm<?= $id_gestion ?>" action="<?= APP_URL;?>/app/controllers/configuraciones/institucion/deleteConfiguraciones.php" method="post">
-                          <input type="text" name="id_config_institucion" value="<?= $id_gestion ?>" hidden>
-                          <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $id_gestion ?>">
+                      <form id="deleteForm<?= $id_nivel ?>" action="<?= APP_URL;?>/app/controllers/niveles/deleteNiveles.php" method="post">
+                          <input type="text" name="id_nivel" value="<?= $id_nivel ?>" hidden>
+                          <button type="button" class="btn btn-secondary btn-sm btn-danger delete-btn" style="border-radius: 0px 5px 0px" data-id="<?= $id_nivel ?>">
                             <i class="bi bi-trash3-fill"></i>
                           </button>
-                        </form>-->
+                        </form>
                       </div>
                     </td>
                   </tr>

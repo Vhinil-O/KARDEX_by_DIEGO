@@ -1,5 +1,5 @@
 <?php
-$sqlNiveles = "SELECT * FROM niveles WHERE estado = '1';";
+$sqlNiveles = "SELECT * FROM niveles as niv INNER JOIN gestiones as ges ON niv.gestion_id = ges.id_gestion WHERE niv.estado = '1';";
 $queryNiveles = $pdo->prepare($sqlNiveles);
 $queryNiveles->execute();
 $niveles = $queryNiveles->fetchAll(PDO::FETCH_ASSOC);
