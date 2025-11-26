@@ -5,6 +5,7 @@
   include '../app/controllers/usuarios/listadoUsuarios.php';
   include '../app/controllers/niveles/listadoNiveles.php';
   include '../app/controllers/grados/listado_de_grados.php';
+  include '../app/controllers/materias/listado_de_materias.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -102,6 +103,29 @@
               </a>
             </div>
           </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-danger">
+              <div class="inner">
+                <?php
+                  $contadorMaterias = 0;
+                  foreach ($materias as $materia) {
+                    $contadorMaterias++;
+                  }
+                ?>
+                <h3><?=$contadorMaterias;?></h3>
+                <p>Materias registradas</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-journal-bookmark-fill"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/materias" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
       </div>
         <!-- /.row -->
       </div><!-- /.container-fluid -->
