@@ -185,7 +185,7 @@ foreach ($sesionDatos as $sesionDato) {
 
           <li class="nav-item ">
             <a href="#" class="nav-link active">
-              <i class="nav-icon fas"><i class="bi bi-person-fill"></i>
+              <i class="nav-icon fas"><i class="bi bi-person-gear"></i>
               </i>
               <p>
                 Personal Administrativo
@@ -194,7 +194,7 @@ foreach ($sesionDatos as $sesionDato) {
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/usuarios " class="nav-link active">
+                <a href="<?=APP_URL;?>/admin/administrativos " class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Listado</p>
                 </a>
