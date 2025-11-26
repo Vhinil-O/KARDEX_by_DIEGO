@@ -7,6 +7,8 @@
   include '../app/controllers/grados/listado_de_grados.php';
   include '../app/controllers/materias/listado_de_materias.php';
   include '../app/controllers/administrativos/listado_de_administrativos.php';
+  include '../app/controllers/docentes/listado_de_docentes.php';
+  include '../app/controllers/estudiantes/listado_de_estudiantes.php';
 ?>
 
 <!-- Content Wrapper. Contains page content -->
@@ -148,6 +150,51 @@
               </a>
             </div>
           </div>
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-default">
+              <div class="inner">
+                <?php
+                  $contadordocentes = 0;
+                  foreach ($docentes as $docente) {
+                    $contadordocentes++;
+                  }
+                ?>
+                <h3><?=$contadordocentes;?></h3>
+                <p>Docentes registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-person-video3"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/docentes" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div> 
+
+          <div class="col-lg-3 col-6">
+            <!-- small card -->
+            <div class="small-box bg-primary">
+              <div class="inner">
+                <?php
+                  $contadorestudiantes = 0;
+                  foreach ($estudiantes as $estudiante) {
+                    $contadorestudiantes++;
+                  }
+                ?>
+                <h3><?=$contadorestudiantes;?></h3>
+                <p>Estudiantes registrados</p>
+              </div>
+              <div class="icon">
+                <i class="fas"><i class="bi bi-tencent-qq"></i></i>
+              </div>
+              <a href="<?=APP_URL?>/admin/estudiantes" class="small-box-footer">
+                Mas informacion <i class="fas fa-arrow-circle-right"></i>
+              </a>
+            </div>
+          </div>
+
 
       </div>
         <!-- /.row -->
