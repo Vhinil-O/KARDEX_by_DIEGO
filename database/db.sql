@@ -104,3 +104,16 @@ CREATE TABLE grados (
 )ENGINE=InnoDB;
 INSERT INTO grados (nivel_id,curso,paralelo,fyh_creacion,estado)
 VALUES ('1','Pre-Escolar - 1','A','2023-12-28 20:29:10','1');
+
+CREATE TABLE materias (
+
+  id_materia      INT (11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+  nombre_materia         VARCHAR (255) NOT NULL,
+
+  fyh_creacion   DATETIME NULL,
+  fyh_actualizacion DATETIME NULL,
+  estado        VARCHAR (11)
+
+)ENGINE=InnoDB;
+INSERT INTO materias (nombre_materia,fyh_creacion,estado)
+VALUES ('MATEMÁTICAS','2023-12-28 20:29:10','1');
