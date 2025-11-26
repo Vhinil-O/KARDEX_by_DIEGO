@@ -1,7 +1,7 @@
 <?php
-include('../../app/config.php');
-include('../layout/parte1.php');
-include('../../app/controllers/docentes/listado_de_docentes.php');
+include '../../app/config.php';
+include '../layout/parte1.php';
+include '../../app/controllers/docentes/listado_de_docentes.php';
 ?>
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -110,8 +110,8 @@ include('../../app/controllers/docentes/listado_de_docentes.php');
 <!-- /.content-wrapper -->
 
 <?php
-include('../layout/parte2.php');
-include('../../layout/mensajes.php');
+include '../layout/parte2.php';
+include '../../layout/mensajes.php';
 ?>
 
 <script>
