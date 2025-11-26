@@ -9,7 +9,7 @@ if( isset($_SESSION['sesionEmail'])) {
 
   $sesionDatos = $querySesion->fetchAll(PDO::FETCH_ASSOC);
 foreach ($sesionDatos as $sesionDato) {
-    $sesionNombre = $sesionDato['nombres'];
+    $sesionNombre = $sesionDato['email'];
   }
 } else {
   //echo "El usuario hizo lo que le salio de la punta de los huevos";
