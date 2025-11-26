@@ -238,7 +238,7 @@ foreach ($sesionDatos as $sesionDato) {
                 </a>
               </li>
               <li class="nav-item">
-                <a href="<?=APP_URL;?>/admin/incripciones " class="nav-link active">
+                <a href="<?=APP_URL;?>/admin/inscripciones " class="nav-link active">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Inscripcion</p>
                 </a>
