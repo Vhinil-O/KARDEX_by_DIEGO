@@ -49,20 +49,37 @@ include '../../app/controllers/niveles/listadoNiveles.php';
                                         <div class="form-group">
                                             <label for="">Curso</label>
                                             <select name="curso" id="" class="form-control">
-                                                <option value="INICIAL - 1"<?=$curso=='INICIAL - 1' ? 'selected' : ''?>>INICIAL - 1</option>
-                                                <option value="INICIAL - 2"<?=$curso=='INICIAL - 2' ? 'selected' : ''?>>INICIAL - 2</option>
-                                                <option value="PRIMARIA - 1"<?=$curso=='PRIMARIA - 1' ? 'selected' : ''?>>PRIMARIA - 1</option>
-                                                <option value="PRIMARIA - 2"<?=$curso=='PRIMARIA - 2' ? 'selected' : ''?>>PRIMARIA - 2</option>
-                                                <option value="PRIMARIA - 3"<?=$curso=='PRIMARIA - 3' ? 'selected' : ''?>>PRIMARIA - 3</option>
-                                                <option value="PRIMARIA - 4"<?=$curso=='PRIMARIA - 4' ? 'selected' : ''?>>PRIMARIA - 4</option>
-                                                <option value="PRIMARIA - 5"<?=$curso=='PRIMARIA - 5' ? 'selected' : ''?>>PRIMARIA - 5</option>
-                                                <option value="PRIMARIA - 6"<?=$curso=='PRIMARIA - 6' ? 'selected' : ''?>>PRIMARIA - 6</option>
-                                                <option value="SECUNDARIA - 1"<?=$curso=='SECUNDARIA - 1' ? 'selected' : ''?>>SECUNDARIA - 1</option>
-                                                <option value="SECUNDARIA - 2"<?=$curso=='SECUNDARIA - 2' ? 'selected' : ''?>>SECUNDARIA - 2</option>
-                                                <option value="SECUNDARIA - 3"<?=$curso=='SECUNDARIA - 3' ? 'selected' : ''?>>SECUNDARIA - 3</option>
-                                                <option value="SECUNDARIA - 4"<?=$curso=='SECUNDARIA - 4' ? 'selected' : ''?>>SECUNDARIA - 4</option>
-                                                <option value="SECUNDARIA - 5"<?=$curso=='SECUNDARIA - 5' ? 'selected' : ''?>>SECUNDARIA - 5</option>
-                                                <option value="SECUNDARIA - 6"<?=$curso=='SECUNDARIA - 6' ? 'selected' : ''?>>SECUNDARIA - 6</option>
+                                                <option value="Pre-Escolar - 1"<?=$curso=='Pre-Escolar - 1' ? 'selected' : ''?>>Pre-Escolar - 1</option>
+                                                <option value="Pre-Escolar - 2"<?=$curso=='Pre-Escolar - 2' ? 'selected' : ''?>>Pre-Escolar - 2</option>
+                                                <option value="Primaria - 1"<?=$curso=='Primaria - 1' ? 'selected' : ''?>>Primaria - 1</option>
+                                                <option value="Primaria - 2"<?=$curso=='Primaria - 2' ? 'selected' : ''?>>Primaria - 2</option>
+                                                <option value="Primaria - 3"<?=$curso=='Primaria - 3' ? 'selected' : ''?>>Primaria - 3</option>
+                                                <option value="Primaria - 4"<?=$curso=='Primaria - 4' ? 'selected' : ''?>>Primaria - 4</option>
+                                                <option value="Primaria - 5"<?=$curso=='Primaria - 5' ? 'selected' : ''?>>Primaria - 5</option>
+                                                <option value="Primaria - 6"<?=$curso=='Primaria - 6' ? 'selected' : ''?>>Primaria - 6</option>
+                                                <option value="Secundaria - 1"<?=$curso=='Secundaria - 1' ? 'selected' : ''?>>Secundaria - 1</option>
+                                                <option value="Secundaria - 2"<?=$curso=='Secundaria - 2' ? 'selected' : ''?>>Secundaria - 2</option>
+                                                <option value="Secundaria - 3"<?=$curso=='Secundaria - 3' ? 'selected' : ''?>>Secundaria - 3</option>
+                                                <option value="Bachillerato - 1"<?=$curso=='Bachillerato - 1' ? 'selected' : ''?>>Bachillerato - 1</option>
+                                                <option value="Bachillerato - 2"<?=$curso=='Bachillerato - 2' ? 'selected' : ''?>>Bachillerato - 2</option>
+                                                <option value="Bachillerato - 3"<?=$curso=='Bachillerato - 3' ? 'selected' : ''?>>Bachillerato - 3</option>
+                                                <option value="Bachillerato - 4"<?=$curso=='Bachillerato - 4' ? 'selected' : ''?>>Bachillerato - 4</option>
+                                                <option value="Bachillerato - 5"<?=$curso=='Bachillerato - 5' ? 'selected' : ''?>>Bachillerato - 5</option>
+                                                <option value="Bachillerato - 6"<?=$curso=='Bachillerato - 6' ? 'selected' : ''?>>Bachillerato - 6</option>
+                                                <option value="Licenciatura - 1"<?=$curso=='Licenciatura - 1' ? 'selected' : ''?>>Licenciatura - 1</option>
+                                                <option value="Licenciatura - 2"<?=$curso=='Licenciatura - 2' ? 'selected' : ''?>>Licenciatura - 2</option>
+                                                <option value="Licenciatura - 3"<?=$curso=='Licenciatura - 3' ? 'selected' : ''?>>Licenciatura - 3</option>
+                                                <option value="Licenciatura - 4"<?=$curso=='Licenciatura - 4' ? 'selected' : ''?>>Licenciatura - 4</option>
+                                                <option value="Licenciatura - 5"<?=$curso=='Licenciatura - 5' ? 'selected' : ''?>>Licenciatura - 5</option>
+                                                <option value="Licenciatura - 6"<?=$curso=='Licenciatura - 6' ? 'selected' : ''?>>Licenciatura - 6</option>
+                                                <option value="Licenciatura - 7"<?=$curso=='Licenciatura - 7' ? 'selected' : ''?>>Licenciatura - 7</option>
+                                                <option value="Licenciatura - 8"<?=$curso=='Licenciatura - 8' ? 'selected' : ''?>>Licenciatura - 8</option>
+                                                <option value="Licenciatura - 9"<?=$curso=='Licenciatura - 9' ? 'selected' : ''?>>Licenciatura - 9</option>
+                                                <option value="Licenciatura - 10"<?=$curso=='Licenciatura - 10' ? 'selected' : ''?>>Licenciatura - 10</option>
+                                                <option value="Licenciatura - 11"<?=$curso=='Licenciatura - 11' ? 'selected' : ''?>>Licenciatura - 11</option>
+                                                <option value="Licenciatura - 12"<?=$curso=='Licenciatura - 12' ? 'selected' : ''?>>Licenciatura - 12</option>
+                                                <option value="Maestria"<?=$curso=='Maestria' ? 'selected' : ''?>>Maestria</option>
+                                                <option value="Doctorado"<?=$curso=='Doctorado' ? 'selected' : ''?>>Doctorado</option>
                                             </select>
                                         </div>
                                     </div>
