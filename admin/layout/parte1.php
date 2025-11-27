@@ -218,6 +218,12 @@ foreach ($sesionDatos as $sesionDato) {
                   <p>Listado de docentes</p>
                 </a>
               </li>
+              <li class="nav-item">
+                <a href="<?=APP_URL;?>/admin/docentes/asignacion.php " class="nav-link active">
+                  <i class="far fa-circle nav-icon"></i>
+                  <p>Asignaciones de materias</p>
+                </a>
+              </li>
             </ul>
           </li>
 
