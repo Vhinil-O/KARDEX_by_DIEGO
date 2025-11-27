@@ -29,6 +29,9 @@ foreach ($sesionDatos as $sesionDato) {
   <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/fontawesome-free/css/all.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?=APP_URL;?>/public/dist/css/adminlte.min.css">
+
+  <!-- jQuery -->
+<script src="<?= APP_URL; ?>/public/plugins/jquery/jquery.min.js"></script>
 <!--SWEETALERT-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
@@ -39,6 +42,9 @@ foreach ($sesionDatos as $sesionDato) {
 <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-bs4/css/dataTables.bootstrap4.min.css">
 <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-responsive/css/responsive.bootstrap4.min.css">
 <link rel="stylesheet" href="<?=APP_URL;?>/public/plugins/datatables-buttons/css/buttons.bootstrap4.min.css">
+
+<!-- jQuery -->
+<script src="<?= APP_URL; ?>/public/plugins/jquery/jquery.min.js"></script>
 </head>
 <body class="hold-transition sidebar-mini">
 <div class="wrapper">
@@ -225,6 +231,16 @@ foreach ($sesionDatos as $sesionDato) {
                 </a>
               </li>
             </ul>
+          </li>
+
+          <li class="nav-item">
+            <a href="<?=APP_URL;?>/admin/calificaciones" class="nav-link active">
+              <i class="nav-icon fas "><i class="bi bi-clipboard-check"></i>
+              </i>
+              <p>
+                Calificaciones
+              </p>
+            </a>
           </li>
 
           <li class="nav-item ">
