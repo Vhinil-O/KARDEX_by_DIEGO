@@ -1,44 +1,31 @@
 <?php
-$id_grado_get = $_GET['id_grado'];
-$id_docente_get = $_GET['id_docente'];
-$id_materia_get = $_GET['id_materia'];
+include('../../app/config.php');
+include('../layout/parte1.php');
+include('../../app/controllers/docentes/listado_de_asignaciones.php');
+include('../../app/controllers/estudiantes/listado_de_estudiantes.php');
+include('../../app/controllers/kardex/listado_de_kardex.php');
 
-include '../../app/config.php';
-include '../../admin/layout/parte1.php';
-include '../../app/controllers/estudiantes/listado_de_estudiantes.php';
-include '../../app/controllers/calificaciones/listado_de_calificaciones.php';
-if ($rol_usuario_sesion != 1) {
+if ($rol_usuario_sesion != 7) {
     //echo "No tienes permisos para ver esta página.";
     // Opcional: Redirigirlo a su panel correspondiente
     header('Location: '.APP_URL.'/login'); 
     exit;
 }
-
-$curso = "";
-$paralelo = "";
-foreach ($estudiantes as $estudiante) {
-    if ($id_grado_get == $estudiante['id_grado']) {
-        $curso = $estudiante['curso'];
-        $paralelo = $estudiante['paralelo'];
-    }
-}
-
 ?>
-
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
     <br>
     <div class="content">
         <div class="container">
             <div class="row">
-                <h2>Listado de estudiantes del grado: <?= $curso ?> paralelo: <?= $paralelo ?></h2>
+                <h1>Grados asignados para reporte de kardex</h1>
             </div>
             <br>
             <div class="row">
                 <div class="col-md-12">
                     <div class="card card-outline card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Estudiantes registrados</h3>
+                            <h3 class="card-title">Asignaciones registradas</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body">
@@ -46,115 +33,38 @@ foreach ($estudiantes as $estudiante) {
                                 <thead>
                                     <tr>
                                         <th style="text-align: center;">Nro</th>
-                                        <th style="text-align: center;">Apellidos y nombres</th>
+
                                         <th style="text-align: center;">Nivel</th>
                                         <th style="text-align: center;">Turno</th>
                                         <th style="text-align: center;">Grado</th>
                                         <th style="text-align: center;">Grupo</th>
-                                        <th style="text-align: center;">1er trimestre</th>
-                                        <th style="text-align: center;">2do trimestre</th>
-                                        <th style="text-align: center;">3er trimestre</th>
+                                        <th style="text-align: center;">Materia <?= $_SESSION['sesionEmail'];?> o nada</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <?php
-                                    $contador_estudiante = 0;
-                                    foreach ($estudiantes as $estudiante) {
-                                        if ($id_grado_get == $estudiante['id_grado']) {
-                                            $id_estudiante = $estudiante['id_estudiante'];
-                                            $contador_estudiante++;
+                                    $contador = 0;
+                                    foreach ($asignaciones as $asignacione) {
+                                        $id_grado = $asignacione['id_grado'];
+                                        if ($email_session == $asignacione['email']) {
+                                            $id_asignacion = $asignacione['id_asignacion'];
+                                            $docente_id = $asignacione['docente_id'];
+                                            $contador = $contador + 1;
                                     ?>
                                             <tr>
-                                                <td style="text-align: center;">
-                                                    <input type="text" id="estudiante_<?= $contador_estudiante ?>" hidden value="<?= $id_estudiante ?>">
-                                                    <?= $contador_estudiante; ?>
-                                                </td>
-                                                <td><?= $estudiante['apellidos'] . " " . $estudiante['nombres']; ?></td>
-                                                <td style="text-align: center;"><?= $estudiante['nivel']; ?></td>
-                                                <td style="text-align: center;"><?= $estudiante['turno']; ?></td>
-                                                <td style="text-align: center;"><?= $estudiante['curso']; ?></td>
-                                                <td style="text-align: center;"><?= $estudiante['paralelo']; ?></td>
-
-                                                <?php
-                                                $nota1 = "";
-                                                $nota2 = "";
-                                                $nota3 = "";
-                                                foreach ($calificaciones as $calificacione) {
-                                                    if (($calificacione['docente_id'] == $id_docente_get) &&
-                                                        ($calificacione['estudiante_id'] == $id_estudiante) &&
-                                                        ($calificacione['materia_id'] == $id_materia_get)
-                                                    ) {
-                                                        $nota1 = $calificacione['nota1'];
-                                                        $nota2 = $calificacione['nota2'];
-                                                        $nota3 = $calificacione['nota3'];
-                                                    }
-                                                }
-                                                ?>
-                                                <td>
-                                                    <input style="text-align: center;" value="<?= $nota1; ?>" id="nota1_<?= $contador_estudiante ?>" type="number" class="form-control">
-                                                </td>
-                                                <td>
-                                                    <input style="text-align: center;" value="<?= $nota2; ?>" id="nota2_<?= $contador_estudiante ?>" type="number" class="form-control">
-                                                </td>
-                                                <td>
-                                                    <input style="text-align: center;" value="<?= $nota3; ?>" id="nota3_<?= $contador_estudiante ?>" type="number" class="form-control">
-                                                </td>
+                                                <td><?= $contador ?></td>
+                                                <td><?= $asignacione['nivel'] ?></td>
+                                                <td><?= $asignacione['turno'] ?></td>
+                                                <td><?= $asignacione['curso'] ?></td>
+                                                <td><?= $asignacione['paralelo'] ?></td>
+                                                <td><?= $asignacione['nombre_materia'] ?></td>
                                             </tr>
                                     <?php
                                         }
                                     }
-                                    $contador_estudiante = $contador_estudiante;
                                     ?>
-
                                 </tbody>
                             </table>
-                            <hr>
-                            <button class="btn btn-primary btn-lg" id="btn_guardar">Guardar notas</button>
-                            <script>
-                                $('#btn_guardar').click(function() {
-                                    var n = '<?= $contador_estudiante ?>';
-                                    var i = 1;
-                                    var id_docente = '<?= $id_docente_get ?>'
-                                    var id_materia = '<?= $id_materia_get ?>'
-
-
-                                    for (i = 1; i <= n; i++) {
-                                        var a = '#nota1_' + i;
-                                        var nota1 = $(a).val();
-
-                                        var b = '#nota2_' + i;
-                                        var nota2 = $(b).val();
-
-                                        var c = '#nota3_' + i;
-                                        var nota3 = $(c).val();
-
-                                        var d = '#estudiante_' + i;
-                                        var id_estudiante = $(d).val();
-                                        //alert("id_docente:"+id_docente+"-id_estudiante:"+id_estudiante+" - "+"id_materia:"+id_materia);
-                                        var url = "../../app/controllers/calificaciones/create.php";
-                                        $.get(url, {
-                                            id_docente: id_docente,
-                                            id_estudiante: id_estudiante,
-                                            id_materia: id_materia,
-                                            nota1: nota1,
-                                            nota2: nota2,
-                                            nota3: nota3
-                                        }, function(datos) {
-
-                                            $('#respuesta').html(datos);
-                                            //alert("mando calificaciones");
-                                        });
-                                    }
-                                    Swal.fire({
-                                        position: "top-end",
-                                        icon: "success",
-                                        title: "Se actualizó las notas",
-                                        showConfirmButton: false,
-                                        timer: 3000
-                                    });
-                                });
-                            </script>
-                            <div id="respuesta" hidden></div>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -162,6 +72,8 @@ foreach ($estudiantes as $estudiante) {
                 </div>
             </div>
             <!-- /.row -->
+            <br><br>
+
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content -->
@@ -169,8 +81,8 @@ foreach ($estudiantes as $estudiante) {
 <!-- /.content-wrapper -->
 
 <?php
-include '../layout/parte2.php';
-include '../../layout/mensajes.php';
+include('../layout/parte2.php');
+include('../../layout/mensajes.php');
 ?>
 
 <script>

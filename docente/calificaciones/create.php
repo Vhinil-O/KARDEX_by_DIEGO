@@ -4,10 +4,11 @@ $id_docente_get = $_GET['id_docente'];
 $id_materia_get = $_GET['id_materia'];
 
 include '../../app/config.php';
-include '../../admin/layout/parte1.php';
+include '../../docente/layout/parte1.php';
 include '../../app/controllers/estudiantes/listado_de_estudiantes.php';
 include '../../app/controllers/calificaciones/listado_de_calificaciones.php';
-if ($rol_usuario_sesion != 1) {
+
+if ($rol_usuario_sesion != 6) {
     //echo "No tienes permisos para ver esta página.";
     // Opcional: Redirigirlo a su panel correspondiente
     header('Location: '.APP_URL.'/login'); 

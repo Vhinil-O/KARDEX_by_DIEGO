@@ -1,8 +1,9 @@
 <?php
 include '../../app/config.php';
-include '../layout/parte1.php';
+include '../../docente/layout/parte1.php';
 include '../../app/controllers/docentes/listado_de_asignaciones.php';
-if ($rol_usuario_sesion != 1) {
+
+if ($rol_usuario_sesion != 6) {
     //echo "No tienes permisos para ver esta página.";
     // Opcional: Redirigirlo a su panel correspondiente
     header('Location: '.APP_URL.'/login'); 
